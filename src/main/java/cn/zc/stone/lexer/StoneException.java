@@ -1,5 +1,7 @@
 package cn.zc.stone.lexer;
 
+import cn.zc.stone.ast.ASTree;
+
 /**
  * Created by zero on 2016/10/23.
  */
