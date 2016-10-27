@@ -12,7 +12,7 @@ public class IdToken extends Token {
     }
 
     @Override
-    public boolean isIndetifier() {
+    public boolean isIdentifier() {
         return true;
     }
 

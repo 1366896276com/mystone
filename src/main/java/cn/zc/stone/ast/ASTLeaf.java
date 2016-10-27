@@ -17,7 +17,7 @@ public class ASTLeaf extends ASTree {
 
     @Override
     public String location() {
-        return "at line "+token.getLineNuber();
+        return "at line "+token.getLineNumber();
     }
 
     @Override

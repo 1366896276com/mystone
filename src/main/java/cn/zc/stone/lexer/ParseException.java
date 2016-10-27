@@ -19,13 +19,13 @@ public class ParseException extends Throwable {
     }
 
     public ParseException(String msg,Token t) {
-        super("syta error around "+location(t) +". "+msg);
+        super("syntax error around "+location(t) +". "+msg);
     }
 
     private static String location(Token t) {
         if(t==Token.EOF)
             return "the last line";
         else
-            return "\"" +t.getText()+"\" at line " +t.getLineNuber();
+            return "\"" +t.getText()+"\" at line " +t.getLineNumber();
     }
 }
