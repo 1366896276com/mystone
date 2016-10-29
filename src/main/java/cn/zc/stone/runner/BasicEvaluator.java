@@ -1,6 +1,7 @@
-package cn.zc.stone.env;
+package cn.zc.stone.runner;
 
 import cn.zc.stone.ast.*;
+import cn.zc.stone.env.Environment;
 import cn.zc.stone.lexer.StoneException;
 import cn.zc.stone.lexer.Token;
 import com.sun.org.apache.bcel.internal.generic.FADD;
@@ -112,8 +113,8 @@ public class BasicEvaluator {
                 Object right = ((ASTreeEx) right()).eval(env);
                 return computeAssign(env, right);
             } else {
-                Object left = ((ASTreeEx) right()).eval(env);
-                Object right = ((ASTreeEx) left()).eval(env);
+                Object left = ((ASTreeEx) left()).eval(env);
+                Object right = ((ASTreeEx) right()).eval(env);
                 return computeOp(left, op, right);
             }
         }

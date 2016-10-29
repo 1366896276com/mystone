@@ -40,7 +40,7 @@ public class ASTList extends ASTree {
     }
 
     public Iterator<ASTree> iterator() {
-        return null;
+        return children();
     }
 
     @Override

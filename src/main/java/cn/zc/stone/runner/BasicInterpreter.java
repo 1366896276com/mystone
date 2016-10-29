@@ -1,7 +1,9 @@
-package cn.zc.stone.env;
+package cn.zc.stone.runner;
 
 import cn.zc.stone.ast.ASTree;
 import cn.zc.stone.ast.NullStmnt;
+import cn.zc.stone.env.BasicEnv;
+import cn.zc.stone.env.Environment;
 import cn.zc.stone.lexer.CodeDialog;
 import cn.zc.stone.lexer.Lexer;
 import cn.zc.stone.lexer.ParseException;
@@ -16,7 +18,7 @@ public class BasicInterpreter {
         run(new BasicParser(),new BasicEnv());
     }
 
-    private static void run(BasicParser basicParser, BasicEnv basicEnv) throws ParseException {
+    protected static void run(BasicParser basicParser, Environment basicEnv) throws ParseException {
         Lexer lexer=new Lexer(new CodeDialog());
         while (lexer.peek(0)!= Token.EOF){
             ASTree t= basicParser.parse(lexer);
