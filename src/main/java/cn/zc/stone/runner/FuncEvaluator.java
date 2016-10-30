@@ -54,7 +54,7 @@ public class FuncEvaluator {
             return evalSubExpr(env, 0);
         }
 
-        private Object evalSubExpr(Environment env, int nest) {
+        protected Object evalSubExpr(Environment env, int nest) {
             if (hasPostfix(nest)) {
                 Object target = evalSubExpr(env, nest + 1);
                 return ((PostFixEx) postfix(nest)).eval(env, target);
@@ -62,7 +62,7 @@ public class FuncEvaluator {
                 return ((BasicEvaluator.ASTreeEx) operand()).eval(env);
         }
 
-        private boolean hasPostfix(int nest) {
+        protected boolean hasPostfix(int nest) {
             return numChildren() - nest > 1;
         }
     }

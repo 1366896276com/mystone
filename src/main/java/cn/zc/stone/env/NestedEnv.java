@@ -1,6 +1,6 @@
 package cn.zc.stone.env;
-
-import cn.zc.stone.runner.FuncEvaluator;
+;
+import static cn.zc.stone.runner.FuncEvaluator.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,16 +28,18 @@ public class NestedEnv implements Environment {
         Environment e=where(name);
         if(e==null)
             e=this;
-        ((FuncEvaluator.EnvEx)e).putNew(name,value);
+        ((EnvEx)e).putNew(name,value);
     }
 
-    private Environment where(String name) {
+    public Environment where(String name) {
         if(values.get(name)!=null){
             return this;
         }else if (outer==null)
             return null;
-        else
-            return ((FuncEvaluator.EnvEx)outer).where(name);
+        else{
+            EnvEx x=(EnvEx)outer;
+            return x.where(name);
+        }
     }
 
     public Object get(String name) {
