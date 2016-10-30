@@ -97,17 +97,17 @@ public class Lexer {
         StringBuilder sb=new StringBuilder();
         int len= m.length()-1;
         for(int i=1;i<len;i++){
-            char c= sb.charAt(i);
+            char c= m.charAt(i);
             if(c=='\\'&&i+1<len){
-                int c2= sb.charAt(i+1);
+                int c2= m.charAt(i+1);
                 if(c2=='"'||c2=='\\'){
-                    c= sb.charAt(++i);
+                    c= m.charAt(++i);
                 }else if(c2=='n'){
                     ++i;
                     c='\n';
                 }
-                sb.append(c);
             }
+            sb.append(c);
         }
         return sb.toString();
     }

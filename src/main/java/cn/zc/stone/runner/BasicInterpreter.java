@@ -18,7 +18,7 @@ public class BasicInterpreter {
         run(new BasicParser(),new BasicEnv());
     }
 
-    protected static void run(BasicParser basicParser, Environment basicEnv) throws ParseException {
+    protected static void  run(BasicParser basicParser, Environment basicEnv) throws ParseException {
         Lexer lexer=new Lexer(new CodeDialog());
         while (lexer.peek(0)!= Token.EOF){
             ASTree t= basicParser.parse(lexer);
