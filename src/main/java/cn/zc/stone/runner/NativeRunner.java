@@ -1,5 +1,7 @@
 package cn.zc.stone.runner;
 
+import cn.zc.stone.evaluator.ClosureEvaluator;
+import cn.zc.stone.evaluator.NativeEvaluator;
 import javassist.gluonj.util.Loader;
 
 /**

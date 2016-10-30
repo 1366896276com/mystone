@@ -1,4 +1,4 @@
-package cn.zc.stone.runner;
+package cn.zc.stone.evaluator;
 
 import cn.zc.stone.ast.*;
 import cn.zc.stone.env.ClassInfo;
@@ -8,7 +8,6 @@ import cn.zc.stone.env.StoneObject;
 import cn.zc.stone.lexer.StoneException;
 import javassist.gluonj.Require;
 import javassist.gluonj.Reviser;
-import static  cn.zc.stone.runner.FuncEvaluator.*;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ public class ClassEvaluator {
 
         public Object eval(Environment env) {
             ClassInfo ci = new ClassInfo(this, env);
-            ((EnvEx) env).put(name(), ci);
+            ((FuncEvaluator.EnvEx) env).put(name(), ci);
             return name();
         }
     }

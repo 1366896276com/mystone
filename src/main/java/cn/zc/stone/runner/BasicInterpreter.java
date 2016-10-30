@@ -4,6 +4,7 @@ import cn.zc.stone.ast.ASTree;
 import cn.zc.stone.ast.NullStmnt;
 import cn.zc.stone.env.BasicEnv;
 import cn.zc.stone.env.Environment;
+import cn.zc.stone.evaluator.BasicEvaluator;
 import cn.zc.stone.lexer.CodeDialog;
 import cn.zc.stone.lexer.Lexer;
 import cn.zc.stone.lexer.ParseException;

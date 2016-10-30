@@ -1,6 +1,6 @@
 package cn.zc.stone.env;
 
-import static cn.zc.stone.runner.FuncEvaluator.*;
+import static cn.zc.stone.evaluator.FuncEvaluator.*;
 
 /**
  * Created by zero on 2016/10/30.
